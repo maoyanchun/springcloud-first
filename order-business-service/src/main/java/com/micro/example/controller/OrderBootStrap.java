@@ -2,6 +2,7 @@ package com.micro.example.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
  * Created by mycge on 2018/4/17.
  */
 
+@EnableCircuitBreaker  //开启断路器功能
 @EnableEurekaClient
 @SpringBootApplication(scanBasePackages = "com.micro.example")
 public class OrderBootStrap {

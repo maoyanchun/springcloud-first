@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Feign接口
  * Created by mycge on 2018/4/17.
  */
-@FeignClient("customer-business-service")
+@FeignClient(value = "customer-business-service", fallback = PaymentServiceHystrix.class)
 public interface PaymentService {
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String getIndex();
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
     public String getPayment(@RequestParam("a") Integer a, @RequestParam("b") Integer b);

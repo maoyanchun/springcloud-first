@@ -14,6 +14,11 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
+    @RequestMapping("getIndex")
+    public String getIndex(){
+        return paymentService.getIndex();
+    }
+
     @RequestMapping("/getPayment")
     public String getPayment(Integer a, Integer b){
         return paymentService.getPayment(a, b);

@@ -81,6 +81,13 @@
                 <scope>test</scope>
             </dependency>
 
+            <!--spring cloud hystrix 断路器：通过控制那些访问远程系统、服务和第三方库的节点，从而对延迟和故障提供更强大的容错能力-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-hystrix</artifactId>
+                <version>${spring.cloud.netflix.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

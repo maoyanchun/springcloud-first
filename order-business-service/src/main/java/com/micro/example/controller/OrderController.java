@@ -16,6 +16,11 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
+    @RequestMapping("/index")
+    public String index(){
+        return orderService.getIndex();
+    }
+
     @RequestMapping("getOrder")
     public String getOrder(@RequestParam(required = false, defaultValue = "2") Integer a, @RequestParam(required = false,defaultValue = "2") Integer b){
         return orderService.getOrder(a, b);
