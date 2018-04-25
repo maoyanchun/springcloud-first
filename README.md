@@ -26,6 +26,9 @@ Hystrix 断路器（20180423）
     关于 hystrix 的异常 fallback method wasn't found  
     详见：https://blog.csdn.net/Ezreal_King/article/details/72942823
  
+Zuul 路由网关（20180424）
+    Spring Cloud Zuul路由是微服务架构的不可或缺的一部分，提供动态路由，监控，弹性，安全等的边缘服务。Zuul是Netflix出品的一个基于JVM路由和服务端的负载均衡器
+    https://www.cnblogs.com/ityouknow/p/6944096.html
  
  
 **Git使用遇到的问题**
