@@ -14,22 +14,22 @@ public class OrderService {
     @Autowired
     RestTemplate restTemplate;
 
-    @HystrixCommand(fallbackMethod = "indexError")
+    @HystrixCommand(fallbackMethod = "getIndexError")
     public String getIndex(){
         //Hystrix 默认超时时间为 2000 毫秒
         return restTemplate.getForObject("http://customer-business-service/index", String.class);
     }
 
-    @HystrixCommand(fallbackMethod = "helloError")
+    @HystrixCommand(fallbackMethod = "getOrderError")
     public String getOrder(Integer a, Integer b){
         return restTemplate.getForObject("http://customer-business-service/show?a="+a+"&b="+b, String.class);
     }
 
-    public String indexError(){
-        return "getIndex error";
+    public String getIndexError(){
+        return "ERROR getIndex order";
     }
 
-    public String helloError(Integer a, Integer b){
-        return "error page. params:a="+a+", b="+b;
+    public String getOrderError(Integer a, Integer b){
+        return "ERROR getOrder order。 params:a="+a+", b="+b;
     }
 }

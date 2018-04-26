@@ -30,6 +30,24 @@ Zuul 路由网关（20180424）
     Spring Cloud Zuul路由是微服务架构的不可或缺的一部分，提供动态路由，监控，弹性，安全等的边缘服务。Zuul是Netflix出品的一个基于JVM路由和服务端的负载均衡器
     https://www.cnblogs.com/ityouknow/p/6944096.html
  
+    20180425
+    1.zuul增加自定义过滤器Filter  对外部访问增加限制token
+    2.路由熔断  实现ZuulFallbackProvider
+    3.路由重试  引入spring-retry依赖并配置重试
+ 
+Spring cloud sleuth与zipkin  分布式服务追踪
+
+    20180426
+    1.分布式服务配置中心git
+    2.配置中心服务化和高可用
+    3.配置中心和消息总线（配置中心终结版）
+
+
+技术博客：www.cnblogs.com/ityouknow 纯洁的微笑
+ 
+???
+1.通过API网关的路由规则访问订单服务的接口，没走断路器hystrix，而直接访问订单服务接口，hystrix超时会走断路器？
+2.路由熔断，断路器hystrix。 路由网关定义了order服务的路由熔断，order服务也提供了hystrix容错机制
  
 **Git使用遇到的问题**
 

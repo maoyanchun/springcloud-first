@@ -16,7 +16,7 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
-    @RequestMapping("/index")
+    @RequestMapping("/getIndex")
     public String index(){
         return orderService.getIndex();
     }

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableFeignClients//(basePackages = "com.micro.example")  //@EnableFeignClients开启Feign
 @EnableEurekaClient
 @SpringBootApplication
-@ComponentScan
+@ComponentScan(basePackages = "com.micro.example")
 public class PaymentBootStrap {
 
     public static void main(String[] args) {

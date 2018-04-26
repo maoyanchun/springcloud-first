@@ -15,6 +15,8 @@
         <module>order-business-service</module>
         <module>payment-business-service</module>
         <module>gateway-zuul</module>
+        <module>zipkin-server</module>
+        <module>config-server</module>
     </modules>
 
     <parent>
@@ -28,6 +30,11 @@
         <spring.cloud.netflix.version>1.2.7.RELEASE</spring.cloud.netflix.version>
         <spring.cloud.version>Dalston.SR1</spring.cloud.version>
         <spring.boot.version>1.4.7.RELEASE</spring.boot.version>
+        <spring.retry.version>1.1.5.RELEASE</spring.retry.version>
+        <zipkin.version>1.23.1</zipkin.version>
+        <spring.cloud.zipkin>1.1.4.RELEASE</spring.cloud.zipkin>
+        <spring.cloud.starter.version>1.1.4.RELEASE</spring.cloud.starter.version>
+        <spring.cloud.config.version>1.2.3.RELEASE</spring.cloud.config.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -94,6 +101,59 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-zuul</artifactId>
                 <version>${spring.cloud.netflix.version}</version>
+            </dependency>
+
+            <!--spring retry  重试依赖-->
+            <dependency>
+                <groupId>org.springframework.retry</groupId>
+                <artifactId>spring-retry</artifactId>
+                <version>${spring.retry.version}</version>
+            </dependency>
+
+            <!--Twitter的zipkin  分布式服务跟踪的开源实现-->
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-server</artifactId>
+                <version>${zipkin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-autoconfigure-ui</artifactId>
+                <version>${zipkin.version}</version>
+            </dependency>
+
+            <!--Spring Cloud Sleuth为服务之间调用提供链路追踪-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-sleuth</artifactId>
+                <version>${spring.cloud.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+                <version>${spring.cloud.starter.version}</version>
+            </dependency>
+
+            <!--zipkin的支持-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zipkin</artifactId>
+                <version>${spring.cloud.zipkin}</version>
+            </dependency>
+
+            <!--spring-cloud-config-server-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-server</artifactId>
+                <version>${spring.cloud.config.version}</version>
+            </dependency>
+
+            <!--spring cloud 对config的支持-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${spring.cloud.config.version}</version>
             </dependency>
 
         </dependencies>

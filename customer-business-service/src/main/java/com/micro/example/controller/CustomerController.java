@@ -15,10 +15,20 @@ import java.util.Random;
 public class CustomerController {
 
     @Value("${server.port}")
-    String port;
+    private String port;
+
+    @Value("${neo.hello}")
+    private String hello; //服务配置中心config-server获取
+
+    @RequestMapping("/hello")
+    public String hello(){
+        return this.hello;
+    }
 
     @RequestMapping("/index")
     public String index(){
+        System.out.println("*********************customer index()*********************");
+
         int sleepTime = new Random().nextInt(5000);
 
         try {
@@ -31,6 +41,8 @@ public class CustomerController {
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
     public String show(@RequestParam(required = false, defaultValue = "1") Integer a, @RequestParam(required = false, defaultValue = "1") Integer b){
+        System.out.println("*********************customer show()*********************");
+
         Integer result = a+b;
         return "show Customer Info: a + b = "+result+"  ,port="+port;
     }
