@@ -8,9 +8,9 @@ import zipkin.server.EnableZipkinServer;
 /**
  * Created by mycge on 2018/4/25.
  */
-@SpringBootApplication
-@EnableEurekaClient
 @EnableZipkinServer
+@EnableEurekaClient
+@SpringBootApplication
 public class ZipkinApplication {
 
     public static void main(String[] args) {

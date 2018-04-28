@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Component;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,8 +18,7 @@ import java.io.InputStream;
 public class OrderFallBack implements ZuulFallbackProvider{
     @Override
     public String getRoute() {//负责哪个route定义的熔断
-        return "customer-business-service";
-        //return "order-business-service";
+        return "order-business-service";
     }
 
     @Override

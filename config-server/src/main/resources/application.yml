@@ -11,3 +11,15 @@ spring:
           search-paths: config-repo
           username: mycgeek@163.com
           password: Github1992_
+  rabbitmq:
+    host : 127.0.0.1
+    port: 5672
+    username: springcloud
+    password: springcloud
+eureka:
+  client:
+    service-url:
+      defaultZone : http://127.0.0.1:10000/eureka
+management:
+  security:
+    enabled: false #消息总线spring cloud bus+rabbitMQ：刷新时关闭安全验证

@@ -3,6 +3,7 @@ package com.micro.example.controller;
 import com.micro.example.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
     @Autowired
-    OrderService orderService;
+    private OrderService orderService;
+
+    @Value("${neo.hello}")
+    private String hello;
+
+    @RequestMapping("/hello")
+    public String hello(){
+        return this.hello;
+    }
 
     @RequestMapping("/getIndex")
     public String index(){

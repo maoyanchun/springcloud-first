@@ -1,4 +1,4 @@
-package com.micro.example.controller;
+package com.micro.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,12 +9,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 /**
+ * @EnableCircuitBreaker 开启断路器功能
  * Created by mycge on 2018/4/17.
  */
-
-@EnableCircuitBreaker  //开启断路器功能
+@EnableCircuitBreaker
 @EnableEurekaClient
-@SpringBootApplication(scanBasePackages = "com.micro.example")
+@SpringBootApplication  //(scanBasePackages = "com.micro.example") 扫包默认同级包目录
 public class OrderBootStrap {
 
     public static void main(String[] args) {

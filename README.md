@@ -42,13 +42,21 @@ Spring cloud sleuth与zipkin  分布式服务追踪
     2.配置中心服务化和高可用
     3.配置中心和消息总线（配置中心终结版）
 
+SpringCloud微服务实战之消息总线BUS-RabbitMQ:
+    https://blog.csdn.net/u012343297/article/details/78872564
+Window下安装 RabbitMQ:
+    https://blog.csdn.net/u012343297/article/details/78874237
+
+hystrix实时监控的工具： hystrix dashboard + turbine
+    https://blog.csdn.net/seapeak007/article/details/77261729
 
 技术博客：www.cnblogs.com/ityouknow 纯洁的微笑
  
 ???
 1.通过API网关的路由规则访问订单服务的接口，没走断路器hystrix，而直接访问订单服务接口，hystrix超时会走断路器？
 2.路由熔断，断路器hystrix。 路由网关定义了order服务的路由熔断，order服务也提供了hystrix容错机制
- 
+3.curl -X POST http://localhost:40000/bus/refresh，Client服务端配置没有更新
+
 **Git使用遇到的问题**
 
 git合并分支或者push时，报错：“Please enter a commit message to explain why this merge is necessary,especi”的解决办法

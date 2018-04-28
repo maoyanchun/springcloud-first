@@ -13,9 +13,8 @@
     <artifactId>eureka-server</artifactId>
     <packaging>war</packaging>
 
-
     <dependencies>
-        <!--注册中心-->
+        <!--服务注册中心 EurekaServer-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>

@@ -8,11 +8,12 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
 /**
+ * @EnableZuulProxy 支持路由网关
  * Created by mycge on 2018/4/24.
  */
 
 @EnableEurekaClient
-@EnableZuulProxy  //支持路由网关
+@EnableZuulProxy
 @SpringBootApplication
 public class GatewayServiceZuulApplication {
 
